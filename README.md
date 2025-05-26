@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Home Title Watcher – Marketing Website Overview
 
-## Getting Started
+The **Home Title Watcher** marketing website serves as both a landing page for the mobile app and a platform for distributing access via promo codes.
 
-First, run the development server:
+## 🌐 Website Purpose
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The main page includes:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- A brief overview of the app’s purpose: **alerting users to suspicious changes in their property title records**
+- Download links for:
+  - **iOS** (via the App Store)
+  - **Android** (as a direct `.apk` sideload)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛒 Promo Code Purchase Flow
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Professionals (such as realtors) can:
 
-## Learn More
+- Purchase **packs of promo codes** in quantities like:
+  - 5, 10, 50, 200+
+- Complete payment through a system like **Stripe**
+- Receive a list of **unique promo codes** post-purchase
+- View, copy, or download those codes to distribute to clients
 
-To learn more about Next.js, take a look at the following resources:
+## 🔐 Promo Code Redemption
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Users enter a promo code in the mobile app (iOS or Android)
+- The backend checks the code against a **MongoDB** database to ensure it is:
+  - **Valid**
+  - **Unused**
+- If valid, the app **unlocks full access** to its services for that user
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 👤 Future Features (Optional)
 
-## Deploy on Vercel
+The website may later support:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- User accounts for code buyers
+- Login and purchase history
+- Promo code usage tracking and analytics
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Tech Stack
+
+- **Frontend:** Next.js (already in development)
+- **Backend:** REST API using MongoDB (hosted on Heroku)
+- **Payments:** Planned integration with **Stripe**
+- **Data Models:** Includes `PromoCode` and `Realtor` models in MongoDB
