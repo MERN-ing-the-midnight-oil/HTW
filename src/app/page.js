@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image"; // ✅ Next.js Image, not from 'react' or DOM
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -32,31 +33,44 @@ export default function Home() {
 
 	return (
 		<main className={styles.main}>
+			<Image
+				src="/icon.png"
+				alt="Stop home title fraud icon"
+				className={styles.heroIcon}
+				width={160}
+				height={160}
+				priority
+			/>
 			<h1 className={styles.title}>Whatcom Home Title Watcher</h1>
 			<p className={styles.subtitle}>
-				Property title monitoring designed for real estate professionals.
+				Real property title monitoring for new home owners.
 			</p>
 
 			<section className={styles.section}>
 				<p>
 					As a realtor, your clients trust you to protect their interests—even
 					after closing. Title fraud is an emerging threat, and it doesn’t stop
-					at identity theft. A forged deed or lien could go undetected for weeks
-					or months—unless someone is watching.
+					at identity theft. A forged deed or lien can be filed against a
+					property without the owner's knowledge—and go undetected for weeks or
+					months unless someone is actively monitoring the records.
 				</p>
 				<p>
+					Some companies claim to "lock" your home title, but that’s
+					misleading—home titles can’t be locked or frozen like credit. The best
+					protection is early detection.{" "}
 					<strong>Whatcom Home Title Watcher</strong> checks the county's public
-					property records every day. If a new document is filed against your
-					client’s home, we send a real-time alert—often the same day.
+					property records daily and sends real-time alerts when changes
+					occur—often the same day. And we provide that service for less than
+					half the cost of competitors like Home Title Lock.
 				</p>
 			</section>
 
 			<section className={styles.section}>
 				<h2>Endorsement Example</h2>
 				<blockquote className={styles.quote}>
-					“My client did a title transfer here in Whatcom County and I received
-					a notification email from HomeTitleWatcher within hours of the
-					transfer. Home Title Watcher really is watching!”
+					“My client completed a title transfer here in Whatcom County after
+					closing and I received a notification email from HomeTitleWatcher
+					within hours of the transfer. Home Title Watcher really is watching!”
 					<br /> — Jane Escrow, Dream Home Realty, Bellingham WA
 				</blockquote>
 			</section>
@@ -65,8 +79,9 @@ export default function Home() {
 				<h2>Realtor Offer</h2>
 				<p>
 					Submit a short recommendation below and receive{" "}
-					<strong>50 promo codes</strong> to give your home-buying clients. Each
-					code grants one year of title monitoring at no cost—a $120 value.
+					<strong>20 promo codes</strong> to give your home-buying clients. Each
+					code grants your client one year of title monitoring at no cost—a $120
+					value.
 				</p>
 
 				{!submitted ? (
